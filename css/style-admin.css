@@ -1,0 +1,118 @@
+@charset "UTF-8";
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.row-limit-size {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header#main-header {
+  box-shadow: 2px 0 3px #e71f73;
+}
+header#main-header > div {
+  display: flex;
+  justify-content: space-between;
+}
+header#main-header > div #logo {
+  height: 50px;
+  line-height: 50px;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+}
+header#main-header > div #logo a {
+  color: #e71f73;
+}
+header#main-header > div nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+header#main-header > div nav ul li a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  color: #e71f73;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0 10px;
+  text-transform: uppercase;
+  transition: all 0.8s ease;
+}
+header#main-header > div nav ul li:hover a {
+  color: #fff;
+  background-color: #e71f73;
+}
+
+main section h1 {
+  text-align: center;
+  color: grey;
+  font-size: 3rem;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+main section form fieldset {
+  padding: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+main section form fieldset .btn-form {
+  background-color: #fff;
+  text-align: center;
+  width: 150px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+main section form fieldset .btn-form:hover {
+  background-color: #e71f73;
+  color: #fff;
+}
+main section form fieldset legend {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e71f73;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+main section form fieldset div {
+  margin-bottom: 30px;
+}
+main section form fieldset label, main section form fieldset input {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+main section form fieldset textarea {
+  text-align: left;
+}
+main section form fieldset input {
+  height: 30px;
+  width: 675px;
+  text-align: left;
+}
+main section form fieldset label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e71f73;
+  margin-bottom: 10px;
+}
+main section form fieldset label::after {
+  content: "👉";
+  transform: rotate(90deg);
+  display: inline-block;
+}/*# sourceMappingURL=style-admin.css.map */
