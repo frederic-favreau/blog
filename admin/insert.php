@@ -18,8 +18,8 @@
                     <li><a href="../index.php">Accueil</a></li>
                     <li id="cat-menu"><a href="#">Catégories</a>
                         <ul id="cat-sub-menu">
-                            <li><a href="../categories.php?id=<?=1?>">Musique</a></li>
-                            <li><a href="../categories.php?id=<?=2?>">Cinéma</a></li>
+                            <li><a href="../categories.php?id=<?= 1 ?>">Musique</a></li>
+                            <li><a href="../categories.php?id=<?= 2 ?>">Cinéma</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Top posts</a></li>
@@ -33,11 +33,11 @@
         <?php
         include_once '../connexion.php';
         if (isset($_POST['submit'])) {
-            $title = $_POST['title'];
-            $extract = $_POST['extract'];
+            $title = addslashes($_POST['title']);
+            $extract = addslashes($_POST['extract']);
             $thumbnail = 'monimage.jpg';
-            $content = $_POST['content'];
-            $author = $_POST['author'];
+            $content = addslashes($_POST['content']);
+            $author = addslashes($_POST['author']);
             $sql = "INSERT INTO post(`title`, `extract`, `thumbnail`, `content`, `author` )VALUES ('$title','$extract','$thumbnail','$content', $author)";
             $db->query($sql);
         }

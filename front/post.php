@@ -15,16 +15,16 @@
             <div id="logo"><a href="../index.php">Blog</a></div>
             <nav>
                 <ul>
-                    <li><a href="./index.php">Accueil</a></li>
+                    <li><a href="../index.php">Accueil</a></li>
                     <li id="cat-menu"><a href="#">Catégories</a>
                         <ul id="cat-sub-menu">
-                            <li><a href="./categories.php?id=<?=1?>">Musique</a></li>
-                            <li><a href="./categories.php?id=<?=2?>">Cinéma</a></li>
+                            <li><a href="../categories.php?id=<?=1?>">Musique</a></li>
+                            <li><a href="../categories.php?id=<?=2?>">Cinéma</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Top posts</a></li>
-                    <li><a href="./front/ramdom.php">Ramdom post</a></li>
-                    <li><a href="./admin/insert.php">New post</a></li>
+                    <li><a href="../front/ramdom.php">Ramdom post</a></li>
+                    <li><a href="../admin/insert.php">New post</a></li>
                 </ul>
             </nav>
         </div>
