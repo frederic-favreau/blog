@@ -18,8 +18,8 @@
                     <li><a href="./index.php">Accueil</a></li>
                     <li id="cat-menu"><a href="#">Catégories</a>
                         <ul id="cat-sub-menu">
-                            <li><a href="#">Musique</a></li>
-                            <li><a href="#">Cinéma</a></li>
+                            <li><a href="./categories.php?id=<?=1?>">Musique</a></li>
+                            <li><a href="./categories.php?id=<?=2?>">Cinéma</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Top posts</a></li>
@@ -32,11 +32,17 @@
     <main>
         <?php include_once 'connexion.php'; ?>
         <section>
-            <h1>Articles par catégories</h1>
+            <?php
+            $id = $_GET['id'];
+            $sql = "SELECT `name` FROM `category` WHERE `id`= $id;";
+            $req = $db->query($sql);
+            while ($category = $req->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <h1>Articles de catégorie <?= $category['name'] ?></h1>
+            <?php } ?>
             <div class="articles row-limit-size">
                 <?php
-                $id = $_GET['id'];
-                $reqpost = $db->prepare("SELECT `title`,`extract`,`thumbnail` FROM `post` INNER JOIN `post_category` ON `post_category`.`id_post`=`post`.`id`WHERE `post_category`.`id_category`= :id");
+                $reqpost = $db->prepare("SELECT `title`,`extract`,`thumbnail`, `id` FROM `post` INNER JOIN `post_category` ON `post_category`.`id_post`=`post`.`id`WHERE `post_category`.`id_category`= :id");
                 $reqpost->bindParam('id', $id, PDO::PARAM_INT);
                 $reqpost->execute();
                 while ($article = $reqpost->fetch(PDO::FETCH_ASSOC)) {
@@ -48,10 +54,13 @@
                         <div class="article-content">
                             <h2 class="article-title"><?= $article['title'] ?></h2>
                             <p class="article-extract"><?= $article['extract'] ?></p>
-
+                            <p id="artplus"><a href="./front/post.php?id=<?= $article['id'] ?>">Lire l'article</a></p>
                         </div>
                     </article>
                 <?php } ?>
             </div>
         </section>
     </main>
+</body>
+
+</html>
