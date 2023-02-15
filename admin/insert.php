@@ -57,7 +57,7 @@
                     </div>
                     <div>
                         <label for="content">Contenu de ton poste</label>
-                        <textarea name="content" id="content" cols="120" rows="20" maxlength="250"></textarea>
+                        <textarea name="content" id="content" cols="120" rows="20" maxlength="4000"></textarea>
                     </div>
                     <div>
                         <label for="author">Auteur</label>

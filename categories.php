@@ -32,14 +32,14 @@
     <main>
         <?php include_once 'connexion.php'; ?>
         <section>
-            <?php
-            $id = $_GET['id'];
-            $sql = "SELECT `name` FROM `category` WHERE `id`= $id;";
-            $req = $db->query($sql);
-            while ($category = $req->fetch(PDO::FETCH_ASSOC)) {
-            ?>
+        <?php
+        $id = $_GET['id'];
+        $reqtitle = $db->prepare("SELECT `name` FROM `category` WHERE `id` = :id");
+        $reqtitle->bindParam('id', $id, PDO::PARAM_INT);
+        $reqtitle->execute();
+        $category = $reqtitle->fetch(PDO::FETCH_ASSOC)
+    ?>
                 <h1>Articles de catégorie <?= $category['name'] ?></h1>
-            <?php } ?>
             <div class="articles row-limit-size">
                 <?php
                 $reqpost = $db->prepare("SELECT `title`,`extract`,`thumbnail`, `id` FROM `post` INNER JOIN `post_category` ON `post_category`.`id_post`=`post`.`id`WHERE `post_category`.`id_category`= :id");
