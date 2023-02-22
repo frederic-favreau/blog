@@ -22,7 +22,7 @@
                             <li><a href="./categories.php?id=<?=2?>">Cinéma</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Top posts</a></li>
+                    <li><a href="./front/connect.php">Se connecter</a></li>
                     <li><a href="./front/ramdom.php">Ramdom post</a></li>
                     <li><a href="./admin/insert.php">New post</a></li>
                 </ul>

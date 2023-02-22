@@ -1,0 +1,180 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.row-limit-size {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  float: left;
+  position: fixed;
+  width: 400px;
+  height: 100vh;
+  background-color: #202020;
+}
+header #logo {
+  height: 50px;
+  line-height: 50px;
+  color: #e71f73;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+header nav {
+  padding-top: 30px;
+}
+header nav > ul > li > a {
+  display: block;
+  height: 30px;
+  padding: 0 20px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 20px;
+}
+header nav > ul > li > a:hover {
+  color: #e71f73;
+}
+header nav > ul > li ul {
+  display: none;
+}
+
+main {
+  padding-left: 500px;
+  padding-top: 20px;
+  z-index: -1;
+}
+main .bloc-modale {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 900;
+  display: none;
+}
+main #box-delete {
+  z-index: 999;
+  width: 500px;
+  height: 250px;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+main #box-delete p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+main #box-delete .article-name-box {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+main #box-delete div {
+  display: flex;
+  justify-content: flex-end;
+  margin: 25px auto;
+}
+main #box-delete div #btn-cancel {
+  border: 1px solid red;
+  color: red;
+  padding: 10px;
+  border-radius: 10px;
+}
+main #box-delete div #btn-cancel:hover {
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+}
+main #box-delete div #btn-confirmed {
+  border: 1px solid green;
+  color: green;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+main #box-delete div #btn-confirmed:hover {
+  background-color: green;
+  color: #fff;
+  cursor: pointer;
+}
+main .active-box-delete {
+  display: block;
+}
+main #confirmed-delete {
+  width: 350px;
+  height: 80px;
+  background-color: green;
+  border-radius: 10px;
+  position: fixed;
+  top: 90%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+main #confirmed-delete p {
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 80px;
+}
+main #list-posts #post {
+  margin: 20px;
+  height: 80px;
+  width: 80%;
+  background-color: #ccc;
+  border: 1px solid black;
+  border-radius: 10px 0 10px 0;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+}
+main #list-posts #post h2 {
+  margin-right: auto;
+  line-height: 80px;
+}
+main #list-posts #post #edit {
+  margin-left: auto;
+  display: flex;
+}
+main #list-posts #post #edit span {
+  line-height: 55px;
+}
+main #list-posts #post #edit a {
+  margin: 15px;
+  color: blue;
+  font-size: 1rem;
+  font-weight: bold;
+}
+main #list-posts #post #edit a:nth-last-of-type(1) {
+  color: red;
+}/*# sourceMappingURL=style-admin-cours.css.map */

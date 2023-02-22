@@ -1,0 +1,215 @@
+$primary: #e71f73;
+$white: #fff;
+$family: Verdana, Geneva, Tahoma, sans-serif;
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.row-limit-size {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    float: left;
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    background-color: #202020;
+
+   #logo {
+        height: 50px;
+        line-height: 50px;
+        color: $primary;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: $family;
+        text-transform: uppercase;
+        margin-top: 30px;
+    }
+    nav {
+        padding-top: 30px;
+        &>ul {
+            &>li {
+                &>a {
+                    display: block;
+                    height: 30px;
+                    padding: 0 20px;
+                    line-height: 30px;
+                    color: #fff;
+                    font-size: 1.5rem;
+                    margin: 20px;
+
+                    &:hover {
+                        color: $primary;
+
+                    }
+                }
+                ul {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+main {
+    padding-left: 500px;
+    padding-top: 20px;
+    z-index: -1;
+
+    .bloc-modale {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 900;
+        display: none;
+    }
+
+    // .active-modale {
+    //     display: block;
+    // }
+
+    #box-delete {
+        z-index: 999;
+        width: 500px;
+        height: 250px;
+        background-color: #f1f1f1;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+
+        .article-name-box {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        div {
+            display: flex;
+            justify-content: flex-end;
+            margin: 25px auto;
+
+            #btn-cancel {
+                border: 1px solid red;
+                color: red;
+                padding: 10px;
+                border-radius: 10px;
+
+                &:hover {
+                    background-color: red;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+    
+            #btn-confirmed {
+                border: 1px solid green;
+                color: green;
+                padding: 10px;
+                border-radius: 10px;
+                margin-left: 10px;
+
+                &:hover {
+                    background-color: green;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .active-box-delete {
+        display: block;
+    }
+
+    #confirmed-delete {
+        width: 350px;
+        height: 80px;
+        background-color: green;
+        border-radius: 10px;
+        position: fixed;
+        top: 90%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        p {
+            margin: auto;
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 80px;
+        }
+    }
+    
+    #list-posts {
+        #post {
+            margin: 20px;
+            height: 80px;
+            width: 80%;
+            background-color: #ccc;
+            border: 1px solid black;
+            border-radius: 10px 0 10px 0;
+            display: flex;
+            padding-left: 20px;
+            padding-right: 20px;
+            align-items: center;
+
+            h2 {
+                margin-right: auto;
+                line-height: 80px;
+            }
+
+            #edit {
+                margin-left: auto;
+                display: flex;
+
+                span {
+                    line-height: 55px;
+                }
+
+                a {
+                    margin: 15px;
+                    color: blue;
+                    font-size: 1rem;
+                    font-weight: bold;
+
+                    &:nth-last-of-type(1) {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
