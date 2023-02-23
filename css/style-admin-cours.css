@@ -132,19 +132,76 @@ main .active-box-delete {
 main #confirmed-delete {
   width: 350px;
   height: 80px;
-  background-color: green;
   border-radius: 10px;
   position: fixed;
-  top: 90%;
-  left: 10%;
-  transform: translate(-50%, -50%);
   text-align: center;
+  animation: slide-in 10000ms;
+  background-color: green;
 }
 main #confirmed-delete p {
   margin: auto;
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 80px;
+}
+main #confirmed-error {
+  width: 350px;
+  height: 80px;
+  border-radius: 10px;
+  position: fixed;
+  text-align: center;
+  animation: slide-in1 10000ms;
+  background-color: red;
+}
+main #confirmed-error p {
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 80px;
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-200%);
+  }
+  30% {
+    transform: translateX(0%);
+    top: 80%;
+    left: 1%;
+  }
+  60% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+@keyframes slide-in1 {
+  from {
+    transform: translateX(-200%);
+  }
+  30% {
+    transform: translateX(0%);
+    top: 80%;
+    left: 1%;
+  }
+  60% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
 }
 main #list-posts #post {
   margin: 20px;

@@ -22,11 +22,37 @@ require_once '../connexion.php';
     <?php
     }
     ?>
+
+<?php if(isset($_SESSION['success'])): ?>
+    <div id="confirmed-delete">
+        <p><?= $_SESSION["success"] ?></p>
+    </div>
+    <?php unset($_SESSION["success"]); ?>
+<?php endif; ?>
+
+<?php if(isset($_SESSION['error'])): ?>
+    <div id="confirmed-error">
+        <p><?= $_SESSION["error"] ?></p>
+    </div>
+    <?php unset($_SESSION["error"]); ?>
+<?php endif; ?>
+
+
+
 </div>
 <div class="bloc-modale"></div>
-<!-- <div id="confirmed-delete">
-    <p>Votre article a bien été supprimé.</p>
-</div> -->
+<?php if(isset($_SESSION['success'])): ?>
+    <div id="confirmed-delete">
+        <p><?= $_SESSION["success"] ?></p>
+    </div>
+<?php endif; ?>
+
+<?php if(isset($_SESSION['error'])): ?>
+    <div id="confirmed-error">
+        <p><?= $_SESSION["error"] ?></p>
+    </div>
+<?php endif; ?>
+
 
 </main>
 
