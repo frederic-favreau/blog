@@ -42,19 +42,3 @@ for (const linkDels of linkDel) {
     });
   });
 }
-
-// window.onload = function() {
-  if (window.location.search.endsWith("?delete=success")) {
-    const notifDelete = document.createElement("div");
-    notifDelete.setAttribute("id", "confirmed-delete");
-    main.appendChild(notifDelete);
-
-    const messageNotif = document.createElement("p");
-    notifDelete.appendChild(messageNotif);
-    messageNotif.innerText = "Votre article a bien été supprimé.";
-
-    setTimeout(() => {
-      notifDelete.remove();
-    }, 3000);
-  }
-// };
