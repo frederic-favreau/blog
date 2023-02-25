@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 ::after,
 ::before {
@@ -62,6 +63,73 @@ main {
   padding-left: 500px;
   padding-top: 20px;
   z-index: -1;
+}
+main h1 {
+  font-size: 30px;
+}
+main form {
+  margin-top: 30px;
+  width: 60vw;
+  margin-left: 6%;
+}
+main form fieldset {
+  padding: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+main form fieldset .btn-form {
+  background-color: #fff;
+  text-align: center;
+  width: 150px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+main form fieldset .btn-form:hover {
+  background-color: #e71f73;
+  color: #fff;
+}
+main form fieldset legend {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e71f73;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+main form fieldset div {
+  margin-bottom: 30px;
+}
+main form fieldset label {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 20px;
+}
+main form fieldset input {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 40px;
+  width: 80%;
+  font-size: 22px;
+}
+main form fieldset textarea {
+  text-align: left;
+  width: 80%;
+  font-size: 20px;
+  padding: 10px;
+}
+main form fieldset label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e71f73;
+  margin-bottom: 20px;
+}
+main form fieldset label::after {
+  content: "👉";
+  transform: rotate(90deg);
+  display: inline-block;
 }
 main .bloc-modale {
   position: fixed;
@@ -135,7 +203,7 @@ main #confirmed-delete {
   border-radius: 10px;
   position: fixed;
   text-align: center;
-  animation: slide-in 4000ms;
+  animation: slide-in 5000ms;
   background-color: green;
   opacity: 0;
   top: 90%;

@@ -73,6 +73,82 @@ main {
   padding-top: 20px;
   z-index: -1;
 
+  h1 {
+    font-size: 30px;
+  }
+
+  form {
+    margin-top: 30px;
+    width: 60vw;
+    margin-left: 6%;
+
+    fieldset {
+      padding: 50px;
+      margin-bottom: 30px;
+      text-align: center;
+      
+      .btn-form {
+        background-color: #fff;
+        text-align: center;
+        width: 150px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-right: 10px;
+        margin-left: 10px;
+        
+        &:hover {
+          background-color: $primary;
+          color: #fff;
+        }
+      }
+      legend {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: $primary;
+        padding-left: 15px;
+        padding-right: 15px;
+        }
+        div {
+          margin-bottom: 30px;
+        }
+        label {
+          display: block;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 20px;
+        }
+        
+        input {
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 40px;
+            width: 80%;
+            font-size: 22px;
+          }
+
+        textarea {
+          text-align: left;
+          width: 80%;
+          font-size: 20px;
+          padding: 10px;
+        }
+
+        label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $primary;
+            margin-bottom: 20px;
+
+          &::after {
+            content: "👉";
+            transform: rotate(90deg);
+            display: inline-block;
+          }
+        }
+    }
+  }
+
   .bloc-modale {
     position: fixed;
     top: 0;
@@ -83,10 +159,6 @@ main {
     z-index: 900;
     display: none;
   }
-
-  // .active-modale {
-  //     display: block;
-  // }
 
   #box-delete {
     z-index: 999;
@@ -160,7 +232,7 @@ main {
     border-radius: 10px;
     position: fixed;
     text-align: center;
-    animation: slide-in 4000ms;
+    animation: slide-in 5000ms;
     background-color: green;
     opacity: 0;
     top: 90%;
