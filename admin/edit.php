@@ -6,16 +6,25 @@ include_once './header-main.php';
 <section id="section-edition">
 
     <?php
-    $id = $_GET['id'];
-    if (isset($_POST['submit'])) {
-        $title = addslashes($_POST['title']);
-        $extract = addslashes($_POST['extract']);
-        $thumbnail = 'monimage.jpg';
-        $content = addslashes($_POST['content']);
+    try {
+        $id = $_GET['id'];
+        if (isset($_POST['submit'])) {
+            $title = addslashes($_POST['title']);
+            $extract = addslashes($_POST['extract']);
+            $content = addslashes($_POST['content']);
 
-        $reqredit = $db->prepare("UPDATE `post` SET `title`='$title',`extract`='$extract',`content`='$content' WHERE `id` = :id");
-        $reqredit->bindParam('id', $id, PDO::PARAM_INT);
-        $reqredit->execute();
+            $reqredit = $db->prepare("UPDATE `post` SET `title`='$title',`extract`='$extract',`content`='$content' WHERE `id` = :id");
+            $reqredit->bindParam('id', $id, PDO::PARAM_INT);
+            $reqredit->execute();
+
+            $_SESSION["modified"] = "Votre article a bien été modifié";
+            header("Location: edit.php?id=" . $id);
+            exit();
+        }
+    } catch (PDOException $e) {
+        $_SESSION["notModified"] = "Votre article n'a pas été modifié";
+        header("Location: edit.php?id=" . $id);
+        exit();
     }
     ?>
 
@@ -51,4 +60,22 @@ include_once './header-main.php';
         </form>
     <?php } ?>
 </section>
+
+<?php if(isset($_SESSION['modified'])): ?> 
+    <div id="confirmed-modified">
+        <p><?= $_SESSION["modified"] ?></p>
+    </div>
+    <?php unset($_SESSION["modified"]); ?>
+<?php endif; ?>
+
+<?php if(isset($_SESSION['notModified'])): ?> 
+    <div id="not-modified">
+        <p><?= $_SESSION["notModified"] ?></p>
+    </div>
+    <?php unset($_SESSION["notModified"]); ?>
+<?php endif; ?>
+
 </main>
+</body>
+
+</html>

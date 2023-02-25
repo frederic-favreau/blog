@@ -15,7 +15,7 @@ require_once '../connexion.php';
             <div id="edit">
                 <a href="./edit.php?id=<?= $article['id'] ?>" class="edit-article">Editer</a>
                 <span>|</span>
-                <a href="#" class="delete-article" data-toogle="box-delete" data-target="#box-delete" data-titre="<?= $article['title'] ?>" data-id="<?= $article['id'] ?>">Supprimer</a>
+                <a href="#" class="delete-article"  data-titre="<?= $article['title'] ?>" data-id="<?= $article['id'] ?>">Supprimer</a>
             </div>
         </div>
 
@@ -24,7 +24,8 @@ require_once '../connexion.php';
     ?>
 
 <div class="bloc-modale"></div>
-<?php if(isset($_SESSION['success'])): ?>
+
+<?php if(isset($_SESSION['success'])): ?> 
     <div id="confirmed-delete">
         <p><?= $_SESSION["success"] ?></p>
     </div>
@@ -37,6 +38,12 @@ require_once '../connexion.php';
     </div>
     <?php unset($_SESSION["error"]); ?>
 <?php endif; ?>
+
+
+
+
+
+
 
 
 </main>

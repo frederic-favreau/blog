@@ -20,7 +20,7 @@ for (const linkDels of linkDel) {
     const titleArticle = document.createElement("p");
     titleArticle.setAttribute("class", "article-name-box");
     boxDelete.appendChild(titleArticle);
-    titleArticle.innerText = titre;
+    titleArticle.innerHTML = `" ${titre} "`;
 
     const contBtn = document.createElement("div");
     titleArticle.append(contBtn);
